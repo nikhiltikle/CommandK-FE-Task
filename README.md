@@ -22,7 +22,7 @@ In the project directory,
 ## Additional Information
 
 1. To store the shortcut combos at component mounting time we store the value of combo as object to carry additional info like(description and component name). We are storing this only for presentation purpose
-2. To de-register the combo we can access `combo-keys` from the store using `Object.keys(shortcuts)`
+2. To unregister the combo we can access `combo-keys` from the store using `Object.keys(shortcuts)`
 
 ## Limitations
 

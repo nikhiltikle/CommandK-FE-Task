@@ -19,7 +19,7 @@ export const KeyboardShortcut = ({
       setShortcuts({ [combo]: { description, componentName } });
     }
 
-    // de-register the shortcut combo on component unmount
+    // unregister the shortcut combo on component unmount
     return () => {
       listener.unregister_combo(combo);
     };

@@ -1,70 +1,36 @@
-# Getting Started with Create React App
+# CommandK Test Task
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This application provides a keyboard shortcut library with following features:
 
-## Available Scripts
+1. Allow any component to bind/unbind shortcuts
+2. Any component can provide a key combination and a callback to be triggered when the key is pressed
+3. This stores all the active shortcuts which helps users to navigate through keyboard, we can show this in help section
 
-In the project directory, you can run:
+You can access the application [here](https://madhavkabra.github.io/CommandK-Test-task/)
 
-### `npm start`
+## Requirment to run the application
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+You must have installed Node Package Manager(npm)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## How to run the application
 
-### `npm test`
+In the project directory,
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+1. Run `npm install` to install required packages
+2. Run `npm start`, this runs application in development mode.Open [http://localhost:3000](http://localhost:3000) to view it in your browser
 
-### `npm run build`
+## Additional Information
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+1. To store the shortcut combos at component mounting time we store the value of combo as object to carry additional info like(description and component name). We storing this only for presentation purpose
+2. To de-register the combo we can access `combo-keys` from the store using `Object.keys(shortcuts)`
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Limitations
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+1. We tried to install [keypress.js](http://dmauro.github.io/Keypress/) by both file and github. It is installing, but when we try to access it in the code, it throws the below error:
 
-### `npm run eject`
+```
+Uncaught TypeError: Cannot read properties of undefined (reading 'Listener')
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+```
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Although, I can solve this error, but due to limited time I used `keypress.js` using script import in `index.html` file
